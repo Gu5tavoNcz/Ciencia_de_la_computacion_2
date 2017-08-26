@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1503759207 source:c:\users\alumno-d\documents\lab\ciencia_de_la_computacion_2\laboratorio\proyecto_1\main.cpp
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	"Fecha.h"
+
+1503759062 source:c:\users\alumno-d\documents\lab\ciencia_de_la_computacion_2\laboratorio\proyecto_1\src\fecha.cpp
+	"Fecha.h"
+
+1503759070 c:\users\alumno-d\documents\lab\ciencia_de_la_computacion_2\laboratorio\proyecto_1\include\fecha.h
+
