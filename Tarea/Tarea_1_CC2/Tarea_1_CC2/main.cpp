@@ -17,24 +17,12 @@ void bisiesto(int n,int m[])
         m[1]=28;
 }
 
-void corregir_signo(int &a,int &b,int &c)
+void corregir_signo(int &b,int &c)
 {
-    int temp;
-    if(a<0)
-    {
-        temp=a;
-        a=temp*(-1);
-    }
     if(b<0)
-    {
-        temp=b;
-        b=temp*(-1);
-    }
+        b=b*(-1);
     if(c<0)
-    {
-        temp=c;
-        c=temp*(-1);
-    }
+        c=c*(-1);
 }
 
 int dias_t(int d, int m,int a,int list[])
@@ -57,13 +45,13 @@ void ejercicio_1()
 {
     int d1,m1,a1,d2,m2,a2,horas,minutos,semanas,dias=1.0;
     int meses[12]={31,28,31,30,31,30,31,31,30,31,30,31};
-    double segundos;
+    long double segundos;
     cout<<"Introduce una fecha: ";
     cin>>d1>>m1>>a1;
     cout<<"Introduce otra fecha: ";
     cin>>d2>>m2>>a2;
-    corregir_signo(d1,m1,a1);
-    corregir_signo(d2,m2,a2);
+    corregir_signo(m1,a1);
+    corregir_signo(m2,a2);
     dias+=dias_t(d2,m2,a2,meses)-dias_t(d1,m1,a1,meses);
     horas=dias*24;
     minutos=horas*60;
@@ -71,12 +59,12 @@ void ejercicio_1()
     semanas=dias/7;
     cout<<"\t\t\t\tREDONDEANDO:\tREDONDEANDO UP\tREDONDENADO DOW"<<endl;
     cout<<"Num Dias:\t"<<dias<<"\t\t"<<dias<<"\t\t"<<dias<<"\t\t"<<dias<<endl;
-    //cout<<"Num Semanas:"<<semanas<"\t"<<int(semanas)<<"\t\t"<<int(semanas+0.4)<<"\t\t"<<int(semanas-0.4)<<endl;
+    cout<<"Num Semanas:"<<float(semanas)<<endl;
     cout<<"Num Meses:\t"<<float(dias/30.5)<<"\t\t"<<int(dias/30)<<endl;
     cout<<"Num Anios:\t"<<a2-a1<<"\t\t"<<int(a2-a1)<<endl;
-    cout<<"Num Segundos:\t"<<segundos<<"\t\t"<<int(segundos)<<endl;
-    cout<<"Num Minutos:\t"<<minutos<<"\t\t"<<int(minutos)<<endl;
-    cout<<"Num Horas:\t"<<horas<<"\t\t"<<int(horas)<<endl;
+    cout<<"Num Segundos:\t"<<segundos<<endl;
+    cout<<"Num Minutos:\t"<<minutos<<endl;
+    cout<<"Num Horas:\t"<<horas<<endl;
     cout<<"\nEn construccion 1 ..."<<dias<<endl;
 }
 
