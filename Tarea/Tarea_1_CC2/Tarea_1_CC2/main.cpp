@@ -41,6 +41,35 @@ int dias_t(int d, int m,int a,int list[])
     return dias;
 }
 
+void suma_mod(int a,int b,int mod)
+{
+    int temp=a+b;
+    while(temp>mod)
+        temp-=mod;
+    cout<<"La suma es: "<<temp<<endl;
+        
+}
+
+void resta_mod(int a,int b,int mod)
+{
+    int temp;
+    if(a>=b)
+        temp=a-b;
+    else
+        temp=b-a;
+    while(temp>mod)
+        temp-=mod;
+    cout<<"La resta es: "<<temp<<endl;
+}
+
+void multiplicacion_mod(int a,int b,int mod)
+{
+    int temp=a*b;
+    while(temp>mod)
+        temp-=mod;
+    cout<<"La multiplicacion es: "<<temp<<endl;
+}
+
 void ejercicio_1()
 {
     int d1,m1,a1,d2,m2,a2,horas,minutos,semanas,dias=1.0;
@@ -91,11 +120,34 @@ void ejercicio_2()
 
 void ejercicio_3()
 {
+    int operacion,mod,a,b;
+    cout<<"Ingrese un numero mnodulo: ";
+    cin>>mod;
+    cout<<"Ingrese un numero A: ";
+    cin>>a;
+    cout<<"Ingrese un numero B: ";
+    cin>>b;
+    cout<<"\n1.- Suma\n2.- Resta\n3.- Multiplicacion\n2.- Inverso\n\nIntroduzca un numero para su operacion: ";
+    cin>>operacion;
+    switch(operacion)
+    {
+        case 1:
+            suma_mod(a,b,mod);
+            break;
+        case 2:
+            resta_mod(a,b,mod);
+            break;
+        case 3:
+            multiplicacion_mod(a,b,mod);
+            break;
+    }
+    
     cout<<"En construccion 3 ..."<<endl;
 }
 
 void ejercicio_4()
 {
+    
     cout<<"En construccion 4 ..."<<endl;
 }
 
@@ -103,7 +155,7 @@ void ejercicio_4()
 int main()
 {
     int ejercicio;
-    cout<<"1.- Diferencia de fechas.\n2.- Numeros primos menosres a mil.\n3.- Calculadora modular: \n\tSuma\n\tResta\n\tMultiplicacion\n\tInverso\n4.- Encriptar - Desencriptar.\n\nIngrese el numero del ejercicio a ejecutar: ";
+    cout<<"1.- Diferencia de fechas.\n2.- Numeros primos menosres a mil.\n3.- Calculadora modular. \n4.- Encriptar - Desencriptar.\n\nIngrese el numero del ejercicio a ejecutar: ";
     cin>>ejercicio;
     switch(ejercicio)
     {
