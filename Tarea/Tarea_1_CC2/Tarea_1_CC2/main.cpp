@@ -1,13 +1,8 @@
-//
-//  main.cpp
-//  Tarea_1_CC2
-//
-//  Created by Gustavo Ñaupa Canaza on 30/08/17.
-//  Copyright © 2017 Gustavo Ñaupa Canaza. All rights reserved.
-//
 
 #include <iostream>
 using namespace std;
+
+///////////////////////////////////////////////////
 
 void bisiesto(int n,int m[])
 {
@@ -41,16 +36,21 @@ int dias_t(int d, int m,int a,int list[])
     return dias;
 }
 
-void suma_mod(int a,int b,int mod)
+
+///////////////////////////////////////////////////
+
+int suma_mod(int a,int b,int mod)
 {
     int temp=a+b;
-    while(temp>mod)
-        temp-=mod;
-    cout<<"La suma es: "<<temp<<endl;
+    temp=temp%mod;
+    while(temp<0)
+        temp+=mod;
+    return temp;
         
 }
 
-void resta_mod(int a,int b,int mod)
+
+int resta_mod(int a,int b,int mod)
 {
     int temp;
     if(a>=b)
@@ -59,22 +59,75 @@ void resta_mod(int a,int b,int mod)
         temp=b-a;
     while(temp>mod)
         temp-=mod;
-    cout<<"La resta es: "<<temp<<endl;
+    while(temp<0)
+        temp+=mod;
+    return temp;
 }
 
-void multiplicacion_mod(int a,int b,int mod)
+int multiplicacion_mod(int a,int b,int mod)
 {
     int temp=a*b;
-    while(temp>mod)
-        temp-=mod;
-    cout<<"La multiplicacion es: "<<temp<<endl;
+    temp=temp%mod;
+    while(temp<0)
+        temp+=mod;
+    return temp;
 }
+
+int euclides(int a,int b)
+{
+    int c;
+    while (a!=b)
+    {
+        if (a>b)
+            a=a-b;
+        else
+            b=b-a;
+    }
+    c=a;
+    return c;
+}
+
+int invertir(int a,int mod,int x=0,int y=1)
+{
+    int p,q,r;
+    static int m=a;
+    if(mod==1)
+    {
+        while(y<0)
+            y+=m;
+        return y;
+    }
+    
+    else
+    {
+        q=a/mod;
+        r=a-q*mod;
+        p=x-q*y;
+        x=y;
+        y=p;
+        return invertir(mod,r,x,y);
+    }
+}
+
+
+int inversa_mod(int a,int mod)
+{
+    if(euclides(mod, a)!=1)
+    {
+        cout<<"No tiene inverso ";
+        return 0;
+    }
+    else
+        return invertir(mod, a);
+}
+
+///////////////////////////////////////////////////
 
 void ejercicio_1()
 {
-    int d1,m1,a1,d2,m2,a2,horas,minutos,semanas,dias=1.0;
+    int d1,m1,a1,d2,m2,a2,horas,minutos,semanas,dias=2;
     int meses[12]={31,28,31,30,31,30,31,31,30,31,30,31};
-    long double segundos;
+    long int segundos;
     cout<<"Introduce una fecha: ";
     cin>>d1>>m1>>a1;
     cout<<"Introduce otra fecha: ";
@@ -87,15 +140,16 @@ void ejercicio_1()
     segundos=minutos*60;
     semanas=dias/7;
     cout<<"\t\t\t\tREDONDEANDO:\tREDONDEANDO UP\tREDONDENADO DOW"<<endl;
-    cout<<"Num Dias:\t"<<dias<<"\t\t"<<dias<<"\t\t"<<dias<<"\t\t"<<dias<<endl;
-    cout<<"Num Semanas:"<<float(semanas)<<endl;
-    cout<<"Num Meses:\t"<<float(dias/30.5)<<"\t\t"<<int(dias/30)<<endl;
-    cout<<"Num Anios:\t"<<a2-a1<<"\t\t"<<int(a2-a1)<<endl;
+    cout<<"Num Dias:\t\t"<<dias<<"\t\t\t"<<dias<<"\t\t"<<dias<<"\t\t"<<dias<<endl;
+    cout<<"Num Semanas:\t"<<float(semanas)<<endl;
+    cout<<"Num Meses:\t\t"<<float(dias/30.5)<<"\t\t\t"<<int(dias/30)<<endl;
+    cout<<"Num Anios:\t\t"<<a2-a1<<"\t\t"<<int(a2-a1)<<endl;
     cout<<"Num Segundos:\t"<<segundos<<endl;
     cout<<"Num Minutos:\t"<<minutos<<endl;
-    cout<<"Num Horas:\t"<<horas<<endl;
-    cout<<"\nEn construccion 1 ..."<<dias<<endl;
+    cout<<"Num Horas:\t\t"<<horas<<endl;
 }
+
+///////////////////////////////////////////////////
 
 void ejercicio_2()
 {
@@ -115,9 +169,9 @@ void ejercicio_2()
             cout<<numero<<" ";
         numero++;
     }
-    cout<<"En construccion 2 ..."<<endl;
 }
 
+///////////////////////////////////////////////////
 void ejercicio_3()
 {
     int operacion,mod,a,b;
@@ -127,23 +181,27 @@ void ejercicio_3()
     cin>>a;
     cout<<"Ingrese un numero B: ";
     cin>>b;
-    cout<<"\n1.- Suma\n2.- Resta\n3.- Multiplicacion\n2.- Inverso\n\nIntroduzca un numero para su operacion: ";
+    cout<<"\n1.- Suma\n2.- Resta\n3.- Multiplicacion\n4.- Inverso\n\nIntroduzca un numero para su operacion: ";
     cin>>operacion;
     switch(operacion)
     {
         case 1:
-            suma_mod(a,b,mod);
+            cout<<"\nLa suma es: "<<suma_mod(a,b,mod)<<"\n"<<endl;
             break;
         case 2:
-            resta_mod(a,b,mod);
+            cout<<"\nLa resta es: "<<resta_mod(a,b,mod)<<"\n"<<endl;
             break;
         case 3:
-            multiplicacion_mod(a,b,mod);
+            cout<<"\nLa multilicacion es: "<<multiplicacion_mod(a,b,mod)<<"\n"<<endl;
             break;
+        case 4:
+            cout<<"\nLa inversa es: "<<inversa_mod(a,mod)<<"\n"<<endl;
+
     }
     
-    cout<<"En construccion 3 ..."<<endl;
 }
+
+///////////////////////////////////////////////////
 
 void ejercicio_4()
 {

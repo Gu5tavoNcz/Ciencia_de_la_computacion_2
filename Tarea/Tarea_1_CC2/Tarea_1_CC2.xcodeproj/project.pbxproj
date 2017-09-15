@@ -251,6 +251,7 @@
 				ECF2E2661F5717BA00F321C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
