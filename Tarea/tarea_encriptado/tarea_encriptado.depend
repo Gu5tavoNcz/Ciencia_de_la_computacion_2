@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1505538429 source:c:\users\gustavo Ñaupa canaza\documents\programacion\ciencia_de_la_computacion_2\tarea\tarea_encriptado\main.cpp
+	<stdlib.h>
+	<iostream>
+	<stdio.h>
+	<vector>
+	<fstream>
+
