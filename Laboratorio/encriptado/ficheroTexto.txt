@@ -1,1 +1,114 @@
-El manejo de ficheros desde C++ puede llegar a ser casi tan sencillo como el manejo de la entrada y salida estándar 
+EEl manejo de ficheros desde C++ puede llegar a ser casi tan sencillo como el manejo de la entrada y salida estándar (pantalla y teclado), 
+con la diferencia de que abrimos el fichero (open) antes de trabajar con él y lo cerramos (close) al terminar. Por ejemplo, para escribir una 
+frase en un fichero de texto (que se crearía automáticamente), podríamos usar un fichero de salida (ofstream), así:
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+ 
+int main () {
+
+ 
+ ofstream ficheroSalida;
+ ficheroSalida.open ("ficheroTexto.txt");
+ ficheroSalida << "Texto para el fichero";
+ ficheroSalida.close();
+ 
+
+ return 0;
+}
+ 
+Si lo que queremos es leer una línea de un fichero, sería muy similar, pero usaríamos ifstream en vez de ofstream, y, 
+si la línea que leemos puede contener espacios (es lo habitual), usaremos getline en vez de >>, al igual que hacíamos 
+con la entrada desde teclado:
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+ 
+int main () {
+
+ 
+ ifstream ficheroEntrada;
+ string frase;
+ 
+ ficheroEntrada.open ("ficheroTexto.txt");
+ getline(ficheroEntrada, frase);
+ ficheroEntrada.close();
+
+ 
+ cout << "Frase leida: " << frase << endl;
+ 
+ return 0;
+
+}
+ 
+Por supuesto, la situación da mucho más juego. Por ejemplo, no necesariamente querremos sólo leer de un fichero, 
+o sólo crearlo: podemos querer añadir al final de un fichero que ya existe, o modificar cualquier posición intermedia del fichero, 
+o abrir un fichero de forma que podamos tanto leer de él como escribir en él. Para esas cosas, en vez de usar ofstream o ifstream 
+usaremos un tipo de fichero más genérico, el fstream, que nos permite indicar el modo de apertura (lectura o escritura, texto o binario, etc), 
+con los siguientes "flags" predefinidos:
+
+ios::in	Abrir para entrada (lectura)
+ios::out	Abrir para salida (escritura)
+ios::binary	Abre en modo binario
+ios::ate	Escoge el final del fichero como posición inicial (si no se dice lo contrario, la posición inicial al abrir el 
+fichero sería el comienzo del fichero)
+ios::app	Abrir para añadir (append) al final, sólo utilizable si se ha abierto el fichero exclusivamente para escritura
+ios::trunc	Trunca el fichero si existía, borrando todo su contenido anterior
+Estos flags se detallan después del nombre de fichero, y podemos indicar varios de ellos a la vez, usando el operador OR a nivel 
+de bits (|): abriríamos para lectura y escritura con fichero.open("fichero.txt", ios::in | ios::out); 
+
+Para comprobar si se ha podido abrir (y no intentar leer de un fichero inexistente) usaríamos "is_open":
+if (fichero.is_open()) { ... }
+
+
+También está la alternativa de comprobarlo "al estilo C", menos legible que la anterior: si fichero es NULL, no estará abierto, 
+luego para comprobar que podemos leer de él, se podría hacer algo como "if (fichero != NULL) { ... }", o aún más compacto, "if (fichero) { ... }" 
+
+Además lo habitual será no querer leer una línea, sino todo el contenido del fichero, ya sean 200 líneas o ninguna. Para comprobar 
+si se ha podido abrir (y no intentar leer de un fichero inexistente) usaríamos "eof", que típicamente usaremos dentro de un bloque 
+repetitivo "while": while (! fichero.eof() ) {...}:
+
+Tenemos otras funciones útiles: "good" para ver si todo ha sido correcto, "bad" para saber si ha habido algún problema (espacio 
+insuficiente, sin permiso de escritura, etc) o "fail", que es muy similar a "bad" pero incluye también problemas de conversión de 
+tipos (leer un carácter alfabético cuando se esperaba un número, por ejemplo).
+
+Así, un fuente que leyera cualquier fichero de texto indicado por el usuario y lo mostrara en pantalla, avisando en caso de que el 
+fichero no exista (o no se pueda abrir), podría ser:
+
+#include <iostream>
+#include <fstream>
+ 
+using namespace std;
+
+ 
+int main () {
+    fstream ficheroEntrada;
+    string nombre;
+    string frase;
+ 
+    cout << "Dime el nombre del fichero: ";
+    getline(cin,nombre);
+
+ 
+    ficheroEntrada.open ( nombre.c_str() , ios::in);
+    if (ficheroEntrada.is_open()) {
+
+        while (! ficheroEntrada.eof() ) {
+            getline (ficheroEntrada,frase);
+            cout << "Leido: " << frase << endl;
+        }
+
+        ficheroEntrada.close();
+    }
+    else cout << "Fichero inexistente o faltan permisos para abrirlo" << endl;  
+
+ 
+    return 0;
+}
+ 
+
+
+Como se ve en este ejemplo, el nombre de fichero debe ser una cadena "al estilo C", de modo que si no es un texto prefijado, 
+sino algo que tenemos almacenado en una variable de tipo "string", deberemos convertir su valor a una cadena al estilo C usando ".c_str()". 
