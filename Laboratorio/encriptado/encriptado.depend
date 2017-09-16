@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1505571011 source:c:\users\alumno-d\documents\programacion\ciencia_de_la_computacion_2\laboratorio\encriptado\main.cpp
+	<stdlib.h>
+	<iostream>
+	<stdio.h>
+	<vector>
+	<fstream>
+

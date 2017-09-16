@@ -1,0 +1,1 @@
+El manejo de ficheros desde C++ puede llegar a ser casi tan sencillo como el manejo de la entrada y salida estándar 
