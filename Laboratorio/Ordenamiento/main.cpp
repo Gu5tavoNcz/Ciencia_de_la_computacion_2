@@ -2,27 +2,59 @@
 
 using namespace std;
 
+void cambio(int *x,int *y)
+{
+    int temp;
+    temp=*x;
+    *x=*y;
+    *y=temp;
+}
+
 void burbuja(int lista[],int tamanio)
 {
-    int temp,i=1;
-    bool ordenado=false;
-    while(i<tamanio || ordenado==false)
+    int cont=0;
+    while(cont<tamanio)
     {
-        i+=1;
-        ordenado=true;
-        for(int j=0;j<tamanio-i;j++)
+        for(int i=1;i<tamanio-cont;i++)
         {
-            if(lista[j]>lista[j+1])
+            if(lista[i]<lista[i-1])
             {
-                ordenado=false;
-                temp=lista[j];
-                lista[j]=lista[j+1];
-                lista[j+1]=temp;
+                cambio(&lista[i],&lista[i-1]);
             }
         }
+        cont++;
     }
-    cout<<"\n"<<endl;
 }
+
+void selectionSort(int lista[],int tamano)
+{
+    for(int i=0;i<tamano-1;i++)
+    {
+        int minimo=i;
+        for(int j=i+1;j<tamano;j++)
+        {
+            if(lista[j]<lista[minimo])
+                minimo=j;
+        }
+        if(minimo!=i)
+            cambio(&lista[i],&lista[minimo]);
+    }
+}
+
+void insertionSort(int lista[],int tamano)
+{
+    for(int i=1;i<tamano;i++)
+    {
+        int j=i;
+        while(j>0 && lista[j]<lista[j-1])
+        {
+            cambio(&lista[j],&lista[j-1]);
+            j--;
+        }
+    }
+}
+
+
 
 void imprimirLista(int lista[],int n)
 {
@@ -36,10 +68,14 @@ void imprimirLista(int lista[],int n)
 
 int main()
 {
-    int miLista[10]={5,2,12,4,6,8,3,3,5,78};
+    int miLista[]={5,1,3,2,5,4,7,9,6,8,0,23,15,34,25,98,56,43,18,21,45,64,35};
     int sizeList=sizeof(miLista)/sizeof(miLista[0]);
     imprimirLista(miLista,sizeList);
+    cout<<endl;
     burbuja(miLista,sizeList);
+    //selectionSort(miLista,sizeList);
+    //insertionSort(miLista,sizeList);
+    cout<<endl;
     imprimirLista(miLista,sizeList);
     return 0;
 }
