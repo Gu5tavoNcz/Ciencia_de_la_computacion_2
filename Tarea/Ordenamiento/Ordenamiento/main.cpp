@@ -31,7 +31,26 @@ void burbuja(int lista[],int tamanio)
 
 void cocktailSort(int lista[],int tamanio)
 {
-
+    int cont=0;
+    bool ordenado=false;
+    while(ordenado==false)
+    {
+        ordenado=true;
+        for(int i=0;i<tamanio-cont;i++)
+        {
+            if(lista[i]<lista[i-1])
+            {
+                ordenado=false;
+                cambio(&lista[i],&lista[i-1]);
+            }
+            if(lista[tamanio-(i+1)]<lista[tamanio-(i+2)])
+            {
+                ordenado=false;
+                cambio(&lista[tamanio-(i+1)],&lista[tamanio-(i+2)]);
+            }
+        }
+        cont++;
+    }
 }
 
 void selectionSort(int lista[],int tamano)
@@ -110,7 +129,7 @@ int main()
     //burbuja(miLista,sizeList);
     //selectionSort(miLista,sizeList);
     //insertionSort(miLista,sizeList);
-    quicksort(miLista,sizeList);
+    cocktailSort(miLista,sizeList);
     cout<<endl;
     imprimirLista(miLista,sizeList);
     return 0;
