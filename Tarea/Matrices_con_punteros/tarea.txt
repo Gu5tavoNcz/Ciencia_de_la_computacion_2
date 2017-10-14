@@ -1,0 +1,5 @@
+1.- Rompecabezas 
+
+2.- Comparar dos cadenas de caracteres
+
+3.- Hacer un crusigramas 
