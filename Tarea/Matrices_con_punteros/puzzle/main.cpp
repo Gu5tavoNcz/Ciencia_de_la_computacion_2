@@ -9,6 +9,9 @@
 #include <iostream>
 #include <stdlib.h>
 #include<time.h>
+#include <stdio.h>
+#include <conio.h>
+
 
 using namespace std;
 
@@ -22,7 +25,6 @@ void cambio(int *s,int *t)
 void matriz_ordenada(int (*p)[4],int tam)
 {
     int cont=1;
-    int *A;
     for(int i=0;i<tam;i++)
     {
         for(int j=0;j<tam;j++)
@@ -46,7 +48,7 @@ void imprimir_matriz(int (*p)[4],int tam)
     }
 }
 
-void desordenar(int (*p)[4],int movimientos)
+int desordenar(int (*p)[4],int movimientos)
 {
     srand(time(NULL));
     int fila=3;
@@ -94,20 +96,54 @@ void desordenar(int (*p)[4],int movimientos)
         movimientos--;
         //cout<<"\n"<<direccion<<endl;
     }
-
+    return fila,columna;
 
 }
 
+void ordenar_matriz(int (*p)[4],int tam)
+{
+
+}
 
 int main()
 {
-
+    char cTecla;
     int matriz[4][4];
     matriz_ordenada(matriz,4);
     desordenar(matriz,100);
     imprimir_matriz(matriz,4);
+    /*
+    while(cTecla != 27)
+    {
+       cTecla = getch();
+       if(cTecla == 0)
+           cTecla = getch();
+       else
+           switch(cTecla)
+           {
+            case 13:
+                 printf("\r\n Presiono ENTER");
+            break;
+            case 9:
+                 printf("\r\n Presiono TAB");
+            break;
+            case 72:
+                 printf("\r\n Presiono Flecha Arriba");
+            break;
+            case 80:
+                 printf("\r\n Presiono Flecha Abajo");
+            break;
+            case 75:
+                 printf("\r\n Presiono Flecha izquierda");
+            break;
+            case 77:
+                 printf("\r\n Presiono Flecha derecha");
+            break;
+            }
+    }
+*/
     int hola=rand()%4;
-    cout <<"\n"<<hola<< endl;
+    cout <<desordenar(matriz,100)<< endl;
     return 0;
 
 }
