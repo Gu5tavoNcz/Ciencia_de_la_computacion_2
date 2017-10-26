@@ -93,8 +93,9 @@ int desordenar(int (*p)[4],int movimientos)
             default:
                 break;
         }
+        if (fila==0 and columna==0)
+            movimientos=0;
         movimientos--;
-        //cout<<"\n"<<direccion<<endl;
     }
     return fila,columna;
 
@@ -110,9 +111,8 @@ int main()
     char cTecla;
     int matriz[4][4];
     matriz_ordenada(matriz,4);
-    desordenar(matriz,100);
+    desordenar(matriz,200);
     imprimir_matriz(matriz,4);
-    /*
     while(cTecla != 27)
     {
        cTecla = getch();
@@ -121,13 +121,8 @@ int main()
        else
            switch(cTecla)
            {
-            case 13:
-                 printf("\r\n Presiono ENTER");
-            break;
-            case 9:
-                 printf("\r\n Presiono TAB");
-            break;
             case 72:
+
                  printf("\r\n Presiono Flecha Arriba");
             break;
             case 80:
@@ -141,7 +136,7 @@ int main()
             break;
             }
     }
-*/
+
     int hola=rand()%4;
     cout <<desordenar(matriz,100)<< endl;
     return 0;
