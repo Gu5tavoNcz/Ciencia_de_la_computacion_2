@@ -48,7 +48,7 @@ void imprimir_matriz(int (*p)[4],int tam)
     }
 }
 
-int desordenar(int (*p)[4],int movimientos)
+void desordenar(int (*p)[4],int movimientos)
 {
     srand(time(NULL));
     int fila=3;
@@ -97,48 +97,77 @@ int desordenar(int (*p)[4],int movimientos)
             movimientos=0;
         movimientos--;
     }
-    return fila,columna;
 
 }
 
 void ordenar_matriz(int (*p)[4],int tam)
 {
+    int (*f)[4]=p;
+    int *ec=*p;
+    int *c=ec;
+    char cTecla;
+    while(cTecla!=27)
+    {
+        cTecla=getch();
+        switch(cTecla)
+        {
+        case 72:
+            if(f<p+tam-1)
+            {
+                f++;
+                c=*f;
+                cambio(c,c-tam);
+                imprimir_matriz(p,4);
 
+            }
+            cout<<"Arriba"<<endl;
+            break;
+        case 80:
+            if(f>p)
+            {
+                f--;
+                c=*f;
+                cambio(c,c+tam);
+                imprimir_matriz(p,4);
+            }
+            cout<<"Abajo"<<endl;
+            break;
+        case 75:
+            if(c)
+            cout<<"Izquierda"<<endl;
+            break;
+        case 77:
+            cout<<"Derecha"<<endl;
+            break;
+
+        }
+    }
+
+    if(f<p+tam)
+    {
+
+    }
 }
 
 int main()
 {
+    int ejercicio=0;
+    cout<<"Cual ejercicio desea ejecutar: ";
+    cin>>ejercicio;
     char cTecla;
     int matriz[4][4];
     matriz_ordenada(matriz,4);
     desordenar(matriz,200);
     imprimir_matriz(matriz,4);
-    while(cTecla != 27)
+    switch(ejercicio)
     {
-       cTecla = getch();
-       if(cTecla == 0)
-           cTecla = getch();
-       else
-           switch(cTecla)
-           {
-            case 72:
-
-                 printf("\r\n Presiono Flecha Arriba");
-            break;
-            case 80:
-                 printf("\r\n Presiono Flecha Abajo");
-            break;
-            case 75:
-                 printf("\r\n Presiono Flecha izquierda");
-            break;
-            case 77:
-                 printf("\r\n Presiono Flecha derecha");
-            break;
-            }
+    case 1:
+        ordenar_matriz(matriz,4);
     }
 
+
+
     int hola=rand()%4;
-    cout <<desordenar(matriz,100)<< endl;
     return 0;
 
 }
