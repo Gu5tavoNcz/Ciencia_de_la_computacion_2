@@ -133,7 +133,13 @@ void ordenar_matriz(int (*p)[4],int tam)
             cout<<"Abajo"<<endl;
             break;
         case 75:
-            if(c)
+            if(c<ec+tam)
+            {
+                c++;
+                ec=*f;
+                cambio(c,ec);
+                imprimir_matriz(p,4);
+            }
             cout<<"Izquierda"<<endl;
             break;
         case 77:
