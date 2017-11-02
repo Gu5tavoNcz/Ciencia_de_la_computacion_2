@@ -24,16 +24,16 @@ void cambio(int *s,int *t)
 
 void matriz_ordenada(int (*p)[4],int tam)
 {
-    int cont=1;
+    int (*f)[4]=p;
+    int *ec=*p;
+    int *c=ec;
+    *c=0;
     for(int i=0;i<tam;i++)
     {
         for(int j=0;j<tam;j++)
-        {
-            *(*(p+i)+j)=cont;
-            cont++;
-        }
+
     }
-    *(*(p+3)+3)=0;
+
 }
 
 void imprimir_matriz(int (*p)[4],int tam)
@@ -137,7 +137,7 @@ void ordenar_matriz(int (*p)[4],int tam)
             {
                 c++;
                 ec=*f;
-                cambio(c,ec);
+                cambio(c,--c);
                 imprimir_matriz(p,4);
             }
             cout<<"Izquierda"<<endl;
@@ -158,19 +158,23 @@ void ordenar_matriz(int (*p)[4],int tam)
 int main()
 {
     int ejercicio=0;
-    cout<<"Cual ejercicio desea ejecutar: ";
-    cin>>ejercicio;
     char cTecla;
     int matriz[4][4];
+    cout<<"Cual ejercicio desea ejecutar: ";
+    cin>>ejercicio;
+    //imprimir_matriz(matriz,16);
+
     matriz_ordenada(matriz,4);
+    imprimir_matriz(matriz,16);
+
     desordenar(matriz,200);
-    imprimir_matriz(matriz,4);
+    /*
     switch(ejercicio)
     {
     case 1:
         ordenar_matriz(matriz,4);
     }
-
+    */
 
 
     int hola=rand()%4;
