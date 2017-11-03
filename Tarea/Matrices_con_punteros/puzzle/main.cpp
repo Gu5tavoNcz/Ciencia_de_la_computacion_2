@@ -22,29 +22,31 @@ void cambio(int *s,int *t)
     *t=temp;
 }
 
-void matriz_ordenada(int (*p)[4],int tam)
+void matriz_ordenada(int (*p)[4])
 {
-    int (*f)[4]=p;
-    int *ec=*p;
-    int *c=ec;
-    *c=0;
-    for(int i=0;i<tam;i++)
+    int *c;
+    c=*p;
+    for(int i=0;i<16;i++)
     {
-        for(int j=0;j<tam;j++)
-
+        *c=i+1;
+        c++;
     }
-
+    c--;
+    *c=0;
 }
 
-void imprimir_matriz(int (*p)[4],int tam)
+void imprimir_matriz(int (*p)[4])
 {
-    for(int i=0;i<tam;i++)
+    int *c;
+    c=*p;
+    for(int i=0;i<4;i++)
     {
-        for(int j=0;j<tam;j++)
+        for(int j=0;j<4;j++)
         {
-            cout<<"\t"<<*(*(p+i)+j);
+            cout<<"\t"<<*c;
+            c++;
         }
-        cout<<endl;
+        cout<<"\n";
     }
 }
 
@@ -117,7 +119,7 @@ void ordenar_matriz(int (*p)[4],int tam)
                 f++;
                 c=*f;
                 cambio(c,c-tam);
-                imprimir_matriz(p,4);
+                imprimir_matriz(p);
 
             }
             cout<<"Arriba"<<endl;
@@ -128,7 +130,7 @@ void ordenar_matriz(int (*p)[4],int tam)
                 f--;
                 c=*f;
                 cambio(c,c+tam);
-                imprimir_matriz(p,4);
+                imprimir_matriz(p);
             }
             cout<<"Abajo"<<endl;
             break;
@@ -138,7 +140,7 @@ void ordenar_matriz(int (*p)[4],int tam)
                 c++;
                 ec=*f;
                 cambio(c,--c);
-                imprimir_matriz(p,4);
+                imprimir_matriz(p);
             }
             cout<<"Izquierda"<<endl;
             break;
@@ -158,23 +160,22 @@ void ordenar_matriz(int (*p)[4],int tam)
 int main()
 {
     int ejercicio=0;
-    char cTecla;
-    int matriz[4][4];
+
     cout<<"Cual ejercicio desea ejecutar: ";
     cin>>ejercicio;
-    //imprimir_matriz(matriz,16);
 
-    matriz_ordenada(matriz,4);
-    imprimir_matriz(matriz,16);
 
-    desordenar(matriz,200);
-    /*
     switch(ejercicio)
     {
     case 1:
-        ordenar_matriz(matriz,4);
+        char cTecla;
+        int matriz[4][4];
+        matriz_ordenada(matriz);
+        imprimir_matriz(matriz);
+        desordenar(matriz,200);
+        imprimir_matriz(matriz);
+        //ordenar_matriz(matriz,4);
     }
-    */
 
 
     int hola=rand()%4;
