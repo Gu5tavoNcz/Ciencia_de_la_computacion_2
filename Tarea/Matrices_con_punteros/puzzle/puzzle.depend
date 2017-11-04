@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1509807261 source:c:\users\alumno-d\documents\programacion\ciencia_de_la_computacion_2\tarea\matrices_con_punteros\puzzle\main.cpp
+1509808466 source:c:\users\alumno-d\documents\programacion\ciencia_de_la_computacion_2\tarea\matrices_con_punteros\puzzle\main.cpp
 	<string.h>
 	<iostream>
 	<stdlib.h>

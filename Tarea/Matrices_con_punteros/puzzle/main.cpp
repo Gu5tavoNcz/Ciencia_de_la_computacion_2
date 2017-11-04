@@ -36,8 +36,9 @@ void revisa(int (*p)[4])
     for(int i=0;i<15;i++)
     {
         if(*c==i+1)
+            gana++;
         c++;
-        gana++;
+
     }
     if(gana==15)
         cout<<"GANO EL JUEGO"<<endl;
@@ -91,7 +92,6 @@ void desordenar(int (*p)[4],int movimientos)
                 c-=tam;
                 cambio(c,c+tam);
                 movimientos-=1;
-                imprimir_matriz(p);
             }
             break;
         case 0:
@@ -100,7 +100,6 @@ void desordenar(int (*p)[4],int movimientos)
                 c++;
                 cambio(c,c-1);
                 movimientos-=1;
-                imprimir_matriz(p);
             }
             break;
         case 2:
@@ -109,7 +108,6 @@ void desordenar(int (*p)[4],int movimientos)
                 c--;
                 cambio(c,c+1);
                 movimientos-=1;
-                imprimir_matriz(p);
             }
             break;
 
@@ -141,7 +139,6 @@ void ordenar_matriz(int (*p)[4],int tam)
                 c+=tam;
                 ec=*f;
                 cambio(c,c-tam);
-                revisa(p);
             }
             //cout<<"Arriba"<<endl;
             break;
@@ -152,7 +149,6 @@ void ordenar_matriz(int (*p)[4],int tam)
                 ec=*f;
                 c-=tam;
                 cambio(c,c+tam);
-                revisa(p);
             }
             break;
         case 75:
@@ -160,7 +156,6 @@ void ordenar_matriz(int (*p)[4],int tam)
             {
                 c++;
                 cambio(c,c-1);
-                revisa(p);
             }
             //cout<<"Izquierda"<<endl;
             break;
@@ -169,12 +164,12 @@ void ordenar_matriz(int (*p)[4],int tam)
             {
                 c--;
                 cambio(c,c+1);
-                revisa(p);
             }
             //cout<<"Derecha"<<endl;
             break;
 
         }
+        revisa(p);
         imprimir_matriz(p);
     }
 }
@@ -184,13 +179,10 @@ int main()
     char cTecla;
     int matriz[4][4];
     matriz_ordenada(matriz);
-    imprimir_matriz(matriz);
     desordenar(matriz,500);
     imprimir_matriz(matriz);
     ordenar_matriz(matriz,4);
 
-
-    int hola=rand()%4;
     return 0;
 
 }
