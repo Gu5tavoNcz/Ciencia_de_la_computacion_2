@@ -5,7 +5,7 @@
 //  Created by Gustavo Ñaupa Canaza on 25/10/17.
 //  Copyright © 2017 Gustavo Ñaupa Canaza. All rights reserved.
 //
-
+#include <string.h>
 #include <iostream>
 #include <stdlib.h>
 #include<time.h>
@@ -49,6 +49,7 @@ void imprimir_matriz(int (*p)[4])
         cout<<"\n";
     }
 }
+
 
 void desordenar(int (*p)[4],int movimientos)
 {
@@ -102,6 +103,11 @@ void desordenar(int (*p)[4],int movimientos)
 
 }
 
+void ordenando_matriz(int (*p)[4],int tam)
+{
+
+}
+
 void ordenar_matriz(int (*p)[4],int tam)
 {
     int (*f)[4]=p;
@@ -130,18 +136,19 @@ void ordenar_matriz(int (*p)[4],int tam)
                 f--;
                 c=*f;
                 cambio(c,c+tam);
-                imprimir_matriz(p);
+                 imprimir_matriz(p);
             }
             cout<<"Abajo"<<endl;
             break;
         case 75:
-            if(c<ec+tam)
-            {
+            //if(f)
+            //{
+                *f+1;
                 c++;
-                ec=*f;
-                cambio(c,--c);
+                //c=*f;
+                cambio(c,c-1);
                 imprimir_matriz(p);
-            }
+            //}
             cout<<"Izquierda"<<endl;
             break;
         case 77:
@@ -156,6 +163,8 @@ void ordenar_matriz(int (*p)[4],int tam)
 
     }
 }
+
+
 
 int main()
 {
@@ -174,7 +183,16 @@ int main()
         imprimir_matriz(matriz);
         desordenar(matriz,200);
         imprimir_matriz(matriz);
-        //ordenar_matriz(matriz,4);
+        ordenar_matriz(matriz,4);
+    case 2:
+        char arr_1[100];
+        char arr_2[100];
+        cout<<"Introduzca la segunda palabra: ";
+        gets(arr_1);
+        //cout<<"Introduzca la segunda palabra: ";
+        //gets(arr_2);
+        //comparar(arr_1,arr_2);
+        cout<<arr_1<<","<<arr_2<<endl;
     }
 
 
