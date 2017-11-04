@@ -1,10 +1,3 @@
-//
-//  main.cpp
-//  Puzzle_mac
-//
-//  Created by Gustavo Ñaupa Canaza on 25/10/17.
-//  Copyright © 2017 Gustavo Ñaupa Canaza. All rights reserved.
-//
 #include <string.h>
 #include <iostream>
 #include <stdlib.h>
@@ -35,6 +28,21 @@ void matriz_ordenada(int (*p)[4])
     *c=0;
 }
 
+void revisa(int (*p)[4])
+{
+    int *c;
+    c=*p;
+    int gana=0;
+    for(int i=0;i<15;i++)
+    {
+        if(*c==i+1)
+        c++;
+        gana++;
+    }
+    if(gana==15)
+        cout<<"GANO EL JUEGO"<<endl;
+}
+
 void imprimir_matriz(int (*p)[4])
 {
     int *c;
@@ -54,59 +62,65 @@ void imprimir_matriz(int (*p)[4])
 void desordenar(int (*p)[4],int movimientos)
 {
     srand(time(NULL));
-    int fila=3;
-    int columna=3;
+    int tam=4;
+    int (*f)[4]=p+tam-1;
+    int *ec=*f;
+    int *c=ec+tam-1;
+
     while(movimientos>0)
     {
         int direccion=rand()%4;
         switch (direccion)
         {
-            case 0:
-                if((columna-1)>=0)
-                    {
-                    cambio(*(p+fila)+columna,*(p+fila)+columna-1);
-                    columna--;
-                }
-                break;
+        case 1:
+            if(f<p+tam-1)
+            {
+                f++;
+                c+=tam;
+                ec=*f;
+                cambio(c,c-tam);
+                movimientos-=1;
 
-            case 1:
-                if((fila-1)>=0)
-                {
-                    cambio(*(p+fila)+columna,*(p+fila-1)+columna);
-                    fila--;
-                }
-                break;
+            }
+            break;
+        case 3:
+            if(f>p)
+            {
+                f--;
+                ec=*f;
+                c-=tam;
+                cambio(c,c+tam);
+                movimientos-=1;
+                imprimir_matriz(p);
+            }
+            break;
+        case 0:
+            if(c<ec+tam-1)
+            {
+                c++;
+                cambio(c,c-1);
+                movimientos-=1;
+                imprimir_matriz(p);
+            }
+            break;
+        case 2:
+            if(c>ec)
+            {
+                c--;
+                cambio(c,c+1);
+                movimientos-=1;
+                imprimir_matriz(p);
+            }
+            break;
 
-            case 2:
-                if((columna+1)<4)
-                {
-                    cambio(*(p+fila)+columna,*(p+fila)+columna+1);
-                    columna++;
-                }
-                break;
-
-            case 3:
-                if((fila+1)<4)
-                {
-                    cambio(*(p+fila)+columna,*(p+fila+1)+columna);
-                    fila++;
-                }
-                break;
-
-            default:
-                break;
         }
-        if (fila==0 and columna==0)
-            movimientos=0;
+        if (**p==0)
+           movimientos=0;
         movimientos--;
     }
 
 }
 
-void ordenando_matriz(int (*p)[4],int tam)
-{
-
-}
 
 void ordenar_matriz(int (*p)[4],int tam)
 {
@@ -117,83 +131,63 @@ void ordenar_matriz(int (*p)[4],int tam)
     while(cTecla!=27)
     {
         cTecla=getch();
+        system("cls");
         switch(cTecla)
         {
         case 72:
             if(f<p+tam-1)
             {
                 f++;
-                c=*f;
+                c+=tam;
+                ec=*f;
                 cambio(c,c-tam);
-                imprimir_matriz(p);
-
+                revisa(p);
             }
-            cout<<"Arriba"<<endl;
+            //cout<<"Arriba"<<endl;
             break;
         case 80:
             if(f>p)
             {
                 f--;
-                c=*f;
+                ec=*f;
+                c-=tam;
                 cambio(c,c+tam);
-                 imprimir_matriz(p);
+                revisa(p);
             }
-            cout<<"Abajo"<<endl;
             break;
         case 75:
-            //if(f)
-            //{
-                *f+1;
+            if(c<ec+tam-1)
+            {
                 c++;
-                //c=*f;
                 cambio(c,c-1);
-                imprimir_matriz(p);
-            //}
-            cout<<"Izquierda"<<endl;
+                revisa(p);
+            }
+            //cout<<"Izquierda"<<endl;
             break;
         case 77:
-            cout<<"Derecha"<<endl;
+            if(c>ec)
+            {
+                c--;
+                cambio(c,c+1);
+                revisa(p);
+            }
+            //cout<<"Derecha"<<endl;
             break;
 
         }
-    }
-
-    if(f<p+tam)
-    {
-
+        imprimir_matriz(p);
     }
 }
 
-
-
 int main()
 {
-    int ejercicio=0;
-
-    cout<<"Cual ejercicio desea ejecutar: ";
-    cin>>ejercicio;
-
-
-    switch(ejercicio)
-    {
-    case 1:
-        char cTecla;
-        int matriz[4][4];
-        matriz_ordenada(matriz);
-        imprimir_matriz(matriz);
-        desordenar(matriz,200);
-        imprimir_matriz(matriz);
-        ordenar_matriz(matriz,4);
-    case 2:
-        char arr_1[100];
-        char arr_2[100];
-        cout<<"Introduzca la segunda palabra: ";
-        gets(arr_1);
-        //cout<<"Introduzca la segunda palabra: ";
-        //gets(arr_2);
-        //comparar(arr_1,arr_2);
-        cout<<arr_1<<","<<arr_2<<endl;
-    }
+    char cTecla;
+    int matriz[4][4];
+    matriz_ordenada(matriz);
+    imprimir_matriz(matriz);
+    desordenar(matriz,500);
+    imprimir_matriz(matriz);
+    ordenar_matriz(matriz,4);
 
 
     int hola=rand()%4;
