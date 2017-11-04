@@ -10,18 +10,24 @@ using namespace std;
 
 void comparar(char *s,char *t)
 {
-
-    while(*s!='\0' || *t!='\0')
+    bool empate=false;
+    int ganador=0;
+    while(*s==*t)
     {
-        if(*s>*t)
-        {
-            cout<<"La primera cadena es mayor"<<endl;
-        }
-        else if(*s<*t)
-            cout<<"La segunda cadena es mayor"<<endl;
+        if(*s=='\0' && *t=='\0')
+            empate=true;
         s++;
         t++;
     }
+    if(empate)
+        cout<<"Las dos cadenas son iguales"<<endl;
+    else if(*s>*t)
+    {
+        cout<<"La primera cadena es mayor"<<endl;
+    }
+    else if(*s<*t)
+        cout<<"La segunda cadena es mayor"<<endl;
+
 }
 
 int main()

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1509767777 source:c:\users\gustavo\documents\programacion\ciencia_de_la_computacion_2\practicando\matriz_con_puntero\main.cpp
+1509771216 source:c:\users\gustavo\documents\programacion\ciencia_de_la_computacion_2\practicando\matriz_con_puntero\main.cpp
 	<string.h>
 	<iostream>
 	<stdlib.h>
