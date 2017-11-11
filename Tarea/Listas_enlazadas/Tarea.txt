@@ -1,0 +1,7 @@
+Lista enlazada
+1.- Lista simple
+2.- Dos listas enlazadas simples (se tienen que ordenar)
+3.- Lista simple doblemente enlazada
+4.- Lista enlazada circular
+5.- Lista enlazada circular con doble enlace
+6.- Lista Josefos (josefos calculator)
