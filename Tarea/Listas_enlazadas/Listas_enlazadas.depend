@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1510409586 source:c:\users\alumno-d\documents\programacion\ciencia_de_la_computacion_2\tarea\listas_enlazadas\main.cpp
+	<iostream>
+	"Listas.h"
+
+1510410942 c:\users\alumno-d\documents\programacion\ciencia_de_la_computacion_2\tarea\listas_enlazadas\include\listas.h
+	<iostream>
+
+1510411062 source:c:\users\alumno-d\documents\programacion\ciencia_de_la_computacion_2\tarea\listas_enlazadas\src\listas.cpp
+	"Listas.h"
+

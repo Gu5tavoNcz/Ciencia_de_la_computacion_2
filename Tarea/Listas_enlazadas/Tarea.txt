@@ -5,3 +5,7 @@ Lista enlazada
 4.- Lista enlazada circular
 5.- Lista enlazada circular con doble enlace
 6.- Lista Josefos (josefos calculator)
+
+https://ronnyml.wordpress.com/2009/07/04/listas-enlazadas-clase-lista-en-c/
+
+http://blog.martincruz.me/2012/10/listas-enlazadas-simples-en-c.html

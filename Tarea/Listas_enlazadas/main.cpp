@@ -1,4 +1,6 @@
 #include <iostream>
+#include "Listas.h"
+#include "Nodos.h"
 
 using namespace std;
 
