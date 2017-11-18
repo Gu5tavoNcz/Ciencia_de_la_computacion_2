@@ -11,6 +11,7 @@ private:
     int valor;
     Nodo *siguiente;
 public:
+    Nodo();
     Nodo(int);
     void mostrar_nodo();
 };

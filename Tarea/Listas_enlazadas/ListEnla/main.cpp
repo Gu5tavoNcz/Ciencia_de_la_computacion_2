@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Nodo.h"
 #include "Listas.h"
+#include <time.h>
+
 
 
 using namespace std;
@@ -13,3 +15,6 @@ int main()
     cout << "Hello world!" << endl;
     return 0;
 }
+
+
+//https://ronnyml.wordpress.com/2009/07/04/listas-enlazadas-clase-lista-en-c/

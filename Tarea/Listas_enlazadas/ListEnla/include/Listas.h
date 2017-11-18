@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
+#include <time.h>
 
 #include "Nodo.h"
 //#include "Nodo.cpp"
