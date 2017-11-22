@@ -19,6 +19,9 @@ int main()
     list.agregar(5);
     list.agregar(6);
     list.agregar(9);
-    list.agregar(1);
+    list.agregar(1); 
+    list.mostrar();
+    list.buscar(5);
+    list.eliminar(6);
     list.mostrar();
 }
