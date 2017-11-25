@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
             endingLineNumber = "42"
-            landmarkName = "node_(T d,node_ * nex=NULL,node_ * pre=NULL)"
+            landmarkName = "node_(T d)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>

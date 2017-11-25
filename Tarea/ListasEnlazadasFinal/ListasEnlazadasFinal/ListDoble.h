@@ -130,6 +130,7 @@ void doble_list<T> ::print(){
             temp=temp->next;
         }
     }
+    cout <<"-------------------------\n"<<endl;
     
 }
 

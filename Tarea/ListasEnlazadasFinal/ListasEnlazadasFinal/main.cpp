@@ -73,6 +73,10 @@ int main()
             ll.insertar_(1);
             ll.insertar_(3);
             ll.print();
+            ll.borrar_(6);
+            ll.print();
+            
+            break;
             
         }
             
@@ -87,6 +91,7 @@ int main()
             listC.eliminar(5);
             
             listC.mostrar();
+            break;
         }
             
             
