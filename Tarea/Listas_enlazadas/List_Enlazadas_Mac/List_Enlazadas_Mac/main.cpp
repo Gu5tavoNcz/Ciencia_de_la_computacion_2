@@ -8,6 +8,7 @@
 #include "Nodo.h"
 #include "Lista.h"
 #include "Nodo_d.h"
+#include "ListCircular.h"
 #include "ListaDoble.h"
 #include <iostream>
 
@@ -43,4 +44,8 @@ int main()
     listD.buscar(7);
     listD.eliminar(4);
     listD.mostrar();
+    
+    ListaCircular listC;
+    listC.agregar(3);
+    listC.mostrar();
 }
