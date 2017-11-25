@@ -16,6 +16,7 @@ using namespace std;
 
 int main()
 {
+    /*
     ListaSimple list;
     list.agregar(2);
     list.agregar(3);
@@ -24,8 +25,8 @@ int main()
     list.agregar(4);
     list.agregar(7);
     list.mostrar();
-    list.buscar(5);
-    list.eliminar(7);
+    //list.buscar(5);
+    list.eliminar(5);
     list.mostrar();
     
     
@@ -36,7 +37,7 @@ int main()
     list.agregar(6);
     list.agregar(76);
     list.agregar(1);
-    
+    */
     
     ListaDoble listD;
     listD.agregar(5);
@@ -53,7 +54,7 @@ int main()
     listD.buscar(7);
     listD.eliminar(4);
     listD.mostrar();
-    
+    /*
     ListaCircular listC;
     listC.agregar(3);
     listC.agregar(1);
@@ -63,6 +64,7 @@ int main()
     listC.eliminar(8);
 
     listC.mostrar();
+     */
     
    // OrdenarDobleLista listota(list.getCabeza(),list2.getCabeza());
     //listota.mostrar();

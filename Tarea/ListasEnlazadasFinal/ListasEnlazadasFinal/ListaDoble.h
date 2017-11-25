@@ -1,15 +1,31 @@
 //
 //  ListaDoble.h
-//  List_Enlazadas_Mac
+//  ListasEnlazadasFinal
 //
-//  Created by Gustavo Ñaupa Canaza on 23/11/17.
+//  Created by Gustavo Ñaupa Canaza on 25/11/17.
 //  Copyright © 2017 Gustavo Ñaupa Canaza. All rights reserved.
 //
 
-#include "Nodo_d.h"
 #ifndef ListaDoble_h
 #define ListaDoble_h
+#include <iostream>
 
+using namespace std;
+
+class NodoDoble
+{
+private:
+    int valor;
+    NodoDoble *siguiente;
+    NodoDoble *anterior;
+public:
+    NodoDoble();
+    NodoDoble(int);
+    void mostrar();
+    friend class ListaDoble;
+};
+
+//-----------------------
 
 class ListaDoble
 {
@@ -28,6 +44,27 @@ public:
 
 #endif /* ListaDoble_h */
 
+
+NodoDoble::NodoDoble()
+{
+    siguiente = NULL;
+    anterior = NULL;
+    valor = NULL;
+}
+
+NodoDoble::NodoDoble(int miValor)
+{
+    siguiente = NULL;
+    anterior = NULL;
+    valor = miValor;
+}
+
+void NodoDoble::mostrar()
+{
+    cout << valor << "->";
+}
+
+//-----------------------
 
 
 ListaDoble::ListaDoble()
@@ -100,8 +137,16 @@ void ListaDoble::eliminar(int miValor)
     if (cabeza->valor == miValor)
     {
         cabeza = temp->siguiente;
+        cabeza -> anterior = NULL;
         cont++;
+        numNodos--;
         delete temp;
+    }
+    else if(temp2 -> siguiente == NULL)
+    {
+        temp2 = temp2 ->anterior;
+        temp2 -> siguiente = NULL;
+        numNodos--;
     }
     else
     {
@@ -111,42 +156,46 @@ void ListaDoble::eliminar(int miValor)
             {
                 NodoDoble *auxiliar = temp2;
                 temp->siguiente = temp2->siguiente;
-                temp -> anterior = temp2 -> anterior;
+                temp2 = temp2 -> siguiente;
+                //temp2 -> anterior = temp;
                 delete auxiliar;
                 cont++;
                 numNodos--;
             }
-            temp = temp->siguiente;
-            temp2 = temp2->siguiente;
+            else
+            {
+                temp= temp -> siguiente;
+                temp2 = temp2 -> siguiente;
+            }
         }
     }
     if (cont == 0)
         cout << "No existe el dato\n"<< endl;
     /*
-    NodoDoble *temp = cabeza;
-    NodoDoble *temp2 = cabeza->siguiente;
-    int cont = 0;
-    if (cabeza->valor == miValor)
-    {
-        cabeza = temp->siguiente;
-        cont++;
-        delete temp;
-    }
-    else
-    {
-        while (temp2->valor != miValor && temp2 != NULL)
-        {
-            temp2 = temp2 -> siguiente;
-        }
-        if(temp2 -> valor == miValor)
-        {
-            temp2 -> anterior -> siguiente  = temp2 -> siguiente;
-            cola -> anterior = temp2 -> anterior;
-            delete (temp2);
-        }
-        
-    }
-    numNodos--;
+     NodoDoble *temp = cabeza;
+     NodoDoble *temp2 = cabeza->siguiente;
+     int cont = 0;
+     if (cabeza->valor == miValor)
+     {
+     cabeza = temp->siguiente;
+     cont++;
+     delete temp;
+     }
+     else
+     {
+     while (temp2->valor != miValor && temp2 != NULL)
+     {
+     temp2 = temp2 -> siguiente;
+     }
+     if(temp2 -> valor == miValor)
+     {
+     temp2 -> anterior -> siguiente  = temp2 -> siguiente;
+     cola -> anterior = temp2 -> anterior;
+     delete (temp2);
+     }
+     
+     }
+     numNodos--;
      */
 }
 
