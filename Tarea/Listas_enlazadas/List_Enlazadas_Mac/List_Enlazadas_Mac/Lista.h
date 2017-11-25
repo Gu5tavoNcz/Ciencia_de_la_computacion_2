@@ -20,7 +20,7 @@ public:
     void buscar(int);
     void eliminar(int);
     void mostrar();
-    
+    Nodo *getCabeza();
 };
 
 #endif /* Lista_h */
@@ -91,6 +91,7 @@ void ListaSimple::eliminar(int miValor)
         cabeza = temp->siguiente;
         cont++;
         delete temp;
+        numNodos--;
     }
     else
     {
@@ -127,5 +128,6 @@ void ListaSimple::mostrar()
     cout<<"\nNumero de nodos: "<<numNodos<<"\n"<<endl;
     cout << "----------------------------------------------------------" << endl;
 }
- 
+
+Nodo *ListaSimple::getCabeza(){return cabeza;}
  

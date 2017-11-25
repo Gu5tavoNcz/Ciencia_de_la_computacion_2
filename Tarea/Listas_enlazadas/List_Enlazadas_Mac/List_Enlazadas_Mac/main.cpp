@@ -17,16 +17,25 @@ using namespace std;
 int main()
 {
     ListaSimple list;
-    list.agregar(7);
+    list.agregar(2);
     list.agregar(3);
     list.agregar(5);
-    list.agregar(6);
-    list.agregar(9);
-    list.agregar(1); 
+    list.agregar(1);
+    list.agregar(4);
+    list.agregar(7);
     list.mostrar();
     list.buscar(5);
-    list.eliminar(1);
+    list.eliminar(7);
     list.mostrar();
+    
+    
+    ListaSimple list2;
+    list.agregar(3);
+    list.agregar(8);
+    list.agregar(56);
+    list.agregar(6);
+    list.agregar(76);
+    list.agregar(1);
     
     
     ListaDoble listD;
@@ -52,7 +61,9 @@ int main()
     listC.agregar(5);
     listC.mostrar();
     listC.eliminar(8);
-    listC.eliminar(5);
-    listC.eliminar(3);
+
     listC.mostrar();
+    
+   // OrdenarDobleLista listota(list.getCabeza(),list2.getCabeza());
+    //listota.mostrar();
 }
