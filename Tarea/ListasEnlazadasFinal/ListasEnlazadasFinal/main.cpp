@@ -32,11 +32,9 @@ int main()
             list.mostrar();
             //list.buscar(5);
             list.eliminar(5);
-            list.eliminar(2);
-            list.eliminar(3);
             list.eliminar(1);
-            list.eliminar(4);
             list.eliminar(7);
+        
             
             list.mostrar();
             break;
@@ -45,19 +43,18 @@ int main()
         case 2:
         {
             ListaDoble listD;
-            listD.agregar(5);
-            listD.agregar(7);
             listD.agregar(2);
-            listD.agregar(1);
-            listD.agregar(8);
-            listD.agregar(9);
             listD.agregar(3);
-            listD.agregar(6);
+            listD.agregar(5);
+            listD.agregar(1);
             listD.agregar(4);
-            listD.agregar(0);
+            listD.agregar(7);
+           
             listD.mostrar();
-            listD.buscar(7);
-            listD.eliminar(9);
+            //listD.buscar(7);
+            listD.eliminar(5);
+            listD.eliminar(1);
+            listD.eliminar(7);
             listD.mostrar();
             
             break;
@@ -83,12 +80,16 @@ int main()
         case 4:
         {
             ListaCircular listC;
+            listC.agregar(2);
             listC.agregar(3);
-            listC.agregar(1);
-            listC.agregar(8);
             listC.agregar(5);
+            listC.agregar(1);
+            listC.agregar(4);
+            listC.agregar(7);
             listC.mostrar();
             listC.eliminar(5);
+            listC.eliminar(1);
+            listC.eliminar(7);
             
             listC.mostrar();
             break;

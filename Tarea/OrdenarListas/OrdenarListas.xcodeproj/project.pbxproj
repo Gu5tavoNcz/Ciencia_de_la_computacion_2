@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC66C34B1FC9D9E3009752C0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC66C34A1FC9D9E3009752C0 /* main.cpp */; };
+		EC66C3631FCA0B73009752C0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC66C3621FCA0B73009752C0 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		EC66C3451FC9D9E3009752C0 /* CopyFiles */ = {
+		EC66C35D1FCA0B73009752C0 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,17 +23,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EC66C3471FC9D9E3009752C0 /* ListasEnlazadasFinal */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ListasEnlazadasFinal; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC66C34A1FC9D9E3009752C0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		EC66C3511FC9D9F7009752C0 /* ListaSimple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListaSimple.h; sourceTree = "<group>"; };
-		EC66C3521FC9DC2F009752C0 /* ListaDoble.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListaDoble.h; sourceTree = "<group>"; };
-		EC66C3531FC9EEC1009752C0 /* ListDoble.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListDoble.h; sourceTree = "<group>"; };
-		EC66C3541FC9F17C009752C0 /* ListaCircular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListaCircular.h; sourceTree = "<group>"; };
-		EC66C3551FCA0AF9009752C0 /* OrdenarListas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrdenarListas.h; sourceTree = "<group>"; };
+		EC66C35F1FCA0B73009752C0 /* OrdenarListas */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OrdenarListas; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC66C3621FCA0B73009752C0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		EC66C3691FCA0B89009752C0 /* Lista.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lista.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		EC66C3441FC9D9E3009752C0 /* Frameworks */ = {
+		EC66C35C1FCA0B73009752C0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,101 +39,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EC66C33E1FC9D9E3009752C0 = {
+		EC66C3561FCA0B73009752C0 = {
 			isa = PBXGroup;
 			children = (
-				EC66C3491FC9D9E3009752C0 /* ListasEnlazadasFinal */,
-				EC66C3481FC9D9E3009752C0 /* Products */,
+				EC66C3611FCA0B73009752C0 /* OrdenarListas */,
+				EC66C3601FCA0B73009752C0 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		EC66C3481FC9D9E3009752C0 /* Products */ = {
+		EC66C3601FCA0B73009752C0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EC66C3471FC9D9E3009752C0 /* ListasEnlazadasFinal */,
+				EC66C35F1FCA0B73009752C0 /* OrdenarListas */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EC66C3491FC9D9E3009752C0 /* ListasEnlazadasFinal */ = {
+		EC66C3611FCA0B73009752C0 /* OrdenarListas */ = {
 			isa = PBXGroup;
 			children = (
-				EC66C34A1FC9D9E3009752C0 /* main.cpp */,
-				EC66C3511FC9D9F7009752C0 /* ListaSimple.h */,
-				EC66C3521FC9DC2F009752C0 /* ListaDoble.h */,
-				EC66C3531FC9EEC1009752C0 /* ListDoble.h */,
-				EC66C3541FC9F17C009752C0 /* ListaCircular.h */,
-				EC66C3551FCA0AF9009752C0 /* OrdenarListas.h */,
+				EC66C3621FCA0B73009752C0 /* main.cpp */,
+				EC66C3691FCA0B89009752C0 /* Lista.h */,
 			);
-			path = ListasEnlazadasFinal;
+			path = OrdenarListas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EC66C3461FC9D9E3009752C0 /* ListasEnlazadasFinal */ = {
+		EC66C35E1FCA0B73009752C0 /* OrdenarListas */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC66C34E1FC9D9E3009752C0 /* Build configuration list for PBXNativeTarget "ListasEnlazadasFinal" */;
+			buildConfigurationList = EC66C3661FCA0B73009752C0 /* Build configuration list for PBXNativeTarget "OrdenarListas" */;
 			buildPhases = (
-				EC66C3431FC9D9E3009752C0 /* Sources */,
-				EC66C3441FC9D9E3009752C0 /* Frameworks */,
-				EC66C3451FC9D9E3009752C0 /* CopyFiles */,
+				EC66C35B1FCA0B73009752C0 /* Sources */,
+				EC66C35C1FCA0B73009752C0 /* Frameworks */,
+				EC66C35D1FCA0B73009752C0 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ListasEnlazadasFinal;
-			productName = ListasEnlazadasFinal;
-			productReference = EC66C3471FC9D9E3009752C0 /* ListasEnlazadasFinal */;
+			name = OrdenarListas;
+			productName = OrdenarListas;
+			productReference = EC66C35F1FCA0B73009752C0 /* OrdenarListas */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		EC66C33F1FC9D9E3009752C0 /* Project object */ = {
+		EC66C3571FCA0B73009752C0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Gustavo Ñaupa Canaza";
 				TargetAttributes = {
-					EC66C3461FC9D9E3009752C0 = {
+					EC66C35E1FCA0B73009752C0 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 592CJK6QFE;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = EC66C3421FC9D9E3009752C0 /* Build configuration list for PBXProject "ListasEnlazadasFinal" */;
+			buildConfigurationList = EC66C35A1FCA0B73009752C0 /* Build configuration list for PBXProject "OrdenarListas" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = EC66C33E1FC9D9E3009752C0;
-			productRefGroup = EC66C3481FC9D9E3009752C0 /* Products */;
+			mainGroup = EC66C3561FCA0B73009752C0;
+			productRefGroup = EC66C3601FCA0B73009752C0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EC66C3461FC9D9E3009752C0 /* ListasEnlazadasFinal */,
+				EC66C35E1FCA0B73009752C0 /* OrdenarListas */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		EC66C3431FC9D9E3009752C0 /* Sources */ = {
+		EC66C35B1FCA0B73009752C0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC66C34B1FC9D9E3009752C0 /* main.cpp in Sources */,
+				EC66C3631FCA0B73009752C0 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		EC66C34C1FC9D9E3009752C0 /* Debug */ = {
+		EC66C3641FCA0B73009752C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -185,7 +177,7 @@
 			};
 			name = Debug;
 		};
-		EC66C34D1FC9D9E3009752C0 /* Release */ = {
+		EC66C3651FCA0B73009752C0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -226,7 +218,7 @@
 			};
 			name = Release;
 		};
-		EC66C34F1FC9D9E3009752C0 /* Debug */ = {
+		EC66C3671FCA0B73009752C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 592CJK6QFE;
@@ -234,7 +226,7 @@
 			};
 			name = Debug;
 		};
-		EC66C3501FC9D9E3009752C0 /* Release */ = {
+		EC66C3681FCA0B73009752C0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 592CJK6QFE;
@@ -245,24 +237,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EC66C3421FC9D9E3009752C0 /* Build configuration list for PBXProject "ListasEnlazadasFinal" */ = {
+		EC66C35A1FCA0B73009752C0 /* Build configuration list for PBXProject "OrdenarListas" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EC66C34C1FC9D9E3009752C0 /* Debug */,
-				EC66C34D1FC9D9E3009752C0 /* Release */,
+				EC66C3641FCA0B73009752C0 /* Debug */,
+				EC66C3651FCA0B73009752C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC66C34E1FC9D9E3009752C0 /* Build configuration list for PBXNativeTarget "ListasEnlazadasFinal" */ = {
+		EC66C3661FCA0B73009752C0 /* Build configuration list for PBXNativeTarget "OrdenarListas" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EC66C34F1FC9D9E3009752C0 /* Debug */,
-				EC66C3501FC9D9E3009752C0 /* Release */,
+				EC66C3671FCA0B73009752C0 /* Debug */,
+				EC66C3681FCA0B73009752C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = EC66C33F1FC9D9E3009752C0 /* Project object */;
+	rootObject = EC66C3571FCA0B73009752C0 /* Project object */;
 }

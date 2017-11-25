@@ -38,7 +38,7 @@ int main()
     list.agregar(76);
     list.agregar(1);
     */
-    
+    /*
     ListaDoble listD;
     listD.agregar(5);
     listD.agregar(7);
@@ -54,7 +54,7 @@ int main()
     listD.buscar(7);
     listD.eliminar(4);
     listD.mostrar();
-    /*
+    */
     ListaCircular listC;
     listC.agregar(3);
     listC.agregar(1);
@@ -64,7 +64,7 @@ int main()
     listC.eliminar(8);
 
     listC.mostrar();
-     */
+    
     
    // OrdenarDobleLista listota(list.getCabeza(),list2.getCabeza());
     //listota.mostrar();
