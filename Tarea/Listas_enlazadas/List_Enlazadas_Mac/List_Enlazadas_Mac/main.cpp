@@ -47,5 +47,12 @@ int main()
     
     ListaCircular listC;
     listC.agregar(3);
+    listC.agregar(1);
+    listC.agregar(8);
+    listC.agregar(5);
+    listC.mostrar();
+    listC.eliminar(8);
+    listC.eliminar(5);
+    listC.eliminar(3);
     listC.mostrar();
 }
