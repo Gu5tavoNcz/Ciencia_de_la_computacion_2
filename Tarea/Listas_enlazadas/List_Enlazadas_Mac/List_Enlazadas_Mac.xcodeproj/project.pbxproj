@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		EC9B2EF31FC7B0E10087CFDE /* Nodo_d.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Nodo_d.h; sourceTree = "<group>"; };
 		EC9B2EF41FC7B62D0087CFDE /* ListaDoble.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListaDoble.h; sourceTree = "<group>"; };
+		EC9B2EF51FC931FF0087CFDE /* ListCircular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListCircular.h; sourceTree = "<group>"; };
 		ECF312551FC4589300CE58CB /* List_Enlazadas_Mac */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = List_Enlazadas_Mac; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF312581FC4589300CE58CB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		ECF3125F1FC458A500CE58CB /* Nodo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Nodo.h; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 				EC9B2EF31FC7B0E10087CFDE /* Nodo_d.h */,
 				ECF312601FC459FA00CE58CB /* Lista.h */,
 				EC9B2EF41FC7B62D0087CFDE /* ListaDoble.h */,
+				EC9B2EF51FC931FF0087CFDE /* ListCircular.h */,
 			);
 			path = List_Enlazadas_Mac;
 			sourceTree = "<group>";

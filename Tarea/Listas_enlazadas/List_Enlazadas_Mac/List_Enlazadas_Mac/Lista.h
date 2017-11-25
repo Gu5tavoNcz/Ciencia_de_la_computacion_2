@@ -62,20 +62,23 @@ void ListaSimple::agregar(int miValor)
 void ListaSimple::buscar(int miValor)
 {
     Nodo *temp = cabeza;
-    int cont=0;
-    int cont2=1;
+    int cont=1;
+    int cont2=0;
     while(temp)
     {
         if(temp->valor == miValor)
         {
-            cout << "El dato se encuentra en la posición: " << cont << "\n" << endl;
+            cout << "El numero "<<miValor<<" se encuentra en la posición: " << cont  << endl;
+            cout << "----------------------------------------------------------" << endl;
             cont2++;
         }
         temp = temp->siguiente;
         cont++;
-        if (cont2 == 0)
-            cout << "No existe el numero en la lista" << "\n" <<endl;
     }
+    if (cont2 == 0)
+        cout << "No existe el numero "<<miValor<<" en la lista" << "\n" <<endl;
+        cout << "----------------------------------------------------------" << endl;
+
 }
 
 void ListaSimple::eliminar(int miValor)
@@ -83,29 +86,30 @@ void ListaSimple::eliminar(int miValor)
     Nodo *temp = cabeza;
     Nodo *temp2 = cabeza->siguiente;
     int cont = 0;
-    while(temp)
+    if (cabeza->valor == miValor)
     {
-        if (cabeza->valor == miValor)
-            cabeza = temp->siguiente;
-        else
-        {
-            while(temp2)
-            {
-                if(temp2->valor == miValor)
-                {
-                    Nodo *auxiliar = temp2;
-                    temp->siguiente = temp2->siguiente;
-                    delete auxiliar;
-                    cont++;
-                    numNodos--;
-                }
-                temp = temp->siguiente;
-                temp2 = temp2->siguiente;
-            }
-        }
-        if (cont == 0)
-            cout << "No existe el dato\n"<< endl;
+        cabeza = temp->siguiente;
+        cont++;
+        delete temp;
     }
+    else
+    {
+        while(temp2)
+        {
+            if(temp2->valor == miValor)
+            {
+                Nodo *auxiliar = temp2;
+                temp->siguiente = temp2->siguiente;
+                delete auxiliar;
+                cont++;
+                numNodos--;
+            }
+            temp = temp->siguiente;
+            temp2 = temp2->siguiente;
+        }
+    }
+    if (cont == 0)
+        cout << "No existe el dato\n"<< endl;
 }
 
 void ListaSimple::mostrar()
@@ -116,11 +120,12 @@ void ListaSimple::mostrar()
         temp->mostrar();
         if (temp->siguiente == 0)
         {
-            cout<<NULL;
+            cout<<"NULL";
         }
         temp=temp->siguiente;
     }
-    cout<<"\n\nNumero de nodos: "<<numNodos<<"\n"<<endl;
+    cout<<"\nNumero de nodos: "<<numNodos<<"\n"<<endl;
+    cout << "----------------------------------------------------------" << endl;
 }
  
  

@@ -5,21 +5,24 @@
 //  Created by Gustavo Ñaupa Canaza on 23/11/17.
 //  Copyright © 2017 Gustavo Ñaupa Canaza. All rights reserved.
 //
-#include <iostream>
+
 #ifndef Nodo_d_h
 #define Nodo_d_h
+#include <iostream>
 
 using namespace std;
 
 class NodoDoble
 {
-public:
+private:
     int valor;
     NodoDoble *siguiente;
     NodoDoble *anterior;
+public:
     NodoDoble();
     NodoDoble(int);
     void mostrar();
+friend class ListaDoble;
 };
 
 #endif /* Nodo_d_h */
